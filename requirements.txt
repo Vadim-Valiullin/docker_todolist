@@ -35,3 +35,7 @@ sqlparse==0.4.3
 tzdata==2022.7
 urllib3==1.26.14
 virtualenv==20.19.0
+
+djangorestframework~=3.14.0
+django-filter~=22.1
+envparse~=0.2.0
