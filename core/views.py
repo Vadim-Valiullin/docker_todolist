@@ -1,5 +1,5 @@
 from django.contrib.auth import login, logout
-from rest_framework import generics, permissions, status
+from rest_framework import generics, permissions
 from rest_framework.response import Response
 
 from core.models import User
@@ -13,11 +13,12 @@ class SignupView(generics.CreateAPIView):
 class LoginView(generics.CreateAPIView):
     serializer_class = LoginSerializer
 
-    def create(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        login(request=self.request, user=serializer.save())
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        user = serializer.save()
+        login(request=request, user=user)
+        return Response(ProfileSerializer(user).data)
 
 
 class ProfileView(generics.RetrieveUpdateDestroyAPIView):
