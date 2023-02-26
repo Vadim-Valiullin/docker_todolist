@@ -1,5 +1,10 @@
 from django.contrib.auth import login, logout
+<<<<<<< HEAD
 from rest_framework import generics, permissions
+=======
+
+from rest_framework import generics, permissions, status
+>>>>>>> ec7adfb12bb5122c0ee5e540378a2395ad946c53
 from rest_framework.response import Response
 
 from core.models import User

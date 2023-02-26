@@ -1,9 +1,10 @@
-version: "3.8"
+version: "3.9"
 
 
 services:
   postgres:
     image: postgres:13.0-alpine
+    restart: on-failure
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -36,7 +37,13 @@ services:
       - ./:/app
 
   frontend:
+<<<<<<< HEAD
     image: sermalenk/skypro-front:lesson-37
+=======
+
+    image: sermalenk/skypro-front:lesson-36
+
+>>>>>>> ec7adfb12bb5122c0ee5e540378a2395ad946c53
     restart: always
     depends_on:
       - api
