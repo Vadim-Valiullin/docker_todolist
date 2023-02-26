@@ -37,13 +37,9 @@ services:
       - ./:/app
 
   frontend:
-<<<<<<< HEAD
-    image: sermalenk/skypro-front:lesson-37
-=======
 
     image: sermalenk/skypro-front:lesson-36
 
->>>>>>> ec7adfb12bb5122c0ee5e540378a2395ad946c53
     restart: always
     depends_on:
       - api
