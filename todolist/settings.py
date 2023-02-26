@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'social_django',
     'core',
     'goals',
+    'bot',
+    'drf_yasg',
 
 ]
 if DEBUG:
@@ -165,3 +167,4 @@ REST_FRAMEWORK = {
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
 
+BOT_TOKEN = env("BOT_TOKEN")

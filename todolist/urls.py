@@ -14,9 +14,9 @@ def health_check(request):
 urlpatterns = [
     path('core/', include(('core.urls', 'core'))),
     path('goals/', include('goals.urls')),
-    path('oauth/', include('social_django.urls', namespace='social')),
+    path('oauth/', include('social_django.urls', namespace='socializer')),
     path('ping/', health_check, name='health-check'),
     path('admin/', admin.site.urls),
     path('core/', include('core.urls')),
-    path('oauth/', include('social_django.urls', namespace='social')),
+    path('oauth/', include('social_django.urls', namespace='socialll')),
 ]

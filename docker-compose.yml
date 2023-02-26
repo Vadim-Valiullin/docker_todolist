@@ -36,9 +36,21 @@ services:
     volumes:
       - ./:/app
 
+  bot:
+    build:
+      context: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+    volumes:
+      - ./.env:/app/.env
+    command: python manage.py runbot
+
   frontend:
 
-    image: sermalenk/skypro-front:lesson-36
+    image: sermalenk/skypro-front:lesson-38
 
     restart: always
     depends_on:
